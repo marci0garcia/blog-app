@@ -1,6 +1,6 @@
-root {
+:root {
     --bg: white;
-    --textColor: Black;
+    --textColor: black;
     --softBg: #f0f0f0;
     --softTextColor: #626262;
 }
@@ -11,19 +11,19 @@ root {
     box-sizing: border-box;
 }
 
-body {
+body { 
     max-width: 100%;
     overflow-x: hidden;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+   color: inherit;
+   text-decoration: none; 
 }
 
 .container {
     min-height: 100vh;
-    background-color: var(-bg);
+    background-color: var(--bg);
     color: var(--textColor);
 }
 
@@ -31,25 +31,24 @@ a {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
-    background: rebeccapurple;
     padding-left: 80px;
     padding-right: 80px;
 }
 
 @media screen and (max-width: 1536px) {
-    .wrapper{
+    .wrapper {
         max-width: 1366px;
     }
 }
 
 @media screen and (max-width: 1280px) {
-    .wrapper{
+    .wrapper {
         max-width: 1024px;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .wrapper{
+    .wrapper {
         max-width: 768px;
         padding-left: 40px;
         padding-right: 40px;
@@ -57,13 +56,13 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    .wrapper{
+    .wrapper {
         max-width: 640px;
     }
 }
 
 @media screen and (max-width: 640px) {
-    .wrapper{
+    .wrapper {
         max-width: 475px;
     }
 }
