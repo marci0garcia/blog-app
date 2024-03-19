@@ -3,6 +3,7 @@ import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import styles from "./homepage.module.css";
 import Link from 'next/link';
+import Menu from "@/components/Menu/Menu";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <CategoryList />
       <div className={styles.content}>
         <CardList />
+        <Menu />
       </div>
     </div>
   );
