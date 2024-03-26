@@ -12,7 +12,7 @@ const getFromLocalStorage = () => {
 };
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme ] = useState(() => {
+  const [theme, setTheme] = useState(() => {
     return getFromLocalStorage();
   });
 

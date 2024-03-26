@@ -1,43 +1,49 @@
 "use client";
 
-
-import React from "react";
-import styles from "./authLinks.module.css";
-import Link from "next/link";
-import { useState } from "react";
+import React, { use } from 'react'
+import styles from "./authLinks.module.css"
+import Link from 'next/link'
+import { useState } from 'react';
 
 const AuthLinks = () => {
 
-  const[open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-  const status = "notautenticated";
-
+  const status = "notauthenticated"
+    
   return (
     <>
-      {status === "notautenticated" ? (
-      <Link href="/login">Login</Link>
+    {status === "notauthenticated" ? (
+        <Link href="/login" className={styles.link}>Login</Link>
     ) : (
-      <>
+        <>
         <Link href="/write" className={styles.link}>Logout</Link>
-        {<span className={styles.link}>Logout</span>}
-      </>
-      ) }
+        <span className={styles.link}>Logout</span>
+        </>
+    )}
 
-      <div className={styles.burger} onClick={() => setOpen(!open)}>
-        <dive className={styles.line}></dive>
-        <dive className={styles.line}></dive>
-        <dive className={styles.line}></dive>
-      </div>
-      {open && (
-        <div className={styles.responsiveMenu}>
-          <Link href="/">HomePage</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">About</Link>
-
-        </div>
+    <div className={styles.burger} onClick={() => setOpen(!open)}>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
+    </div>
+    {open && (
+      <div className={styles.responsiveMenu}>
+        <Link href="/">Homepage</Link>
+        <Link href="/">Contact</Link>
+        <Link href="/">About</Link>
+        {status === "notauthenticated" ? (
+          <Link href="/login" className={styles.link}>Login</Link>
+          ) : (
+            <>
+            <Link href="/write" className={styles.link}>Logout</Link>
+            <span className={styles.link}>Logout</span>
+        </>
       )}
+      </div>
+    )}
     </>
   );
 };
 
-export default AuthLinks;
+export default AuthLinks
